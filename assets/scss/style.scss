@@ -2718,6 +2718,7 @@ body {
         flex: 1;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         border-radius: 30px;
         
         h3 {
@@ -2768,102 +2769,98 @@ body {
 
 .whyPartnerSection {
     padding: 100px 0;
-
-    .headingArea {
-        margin-bottom: 60px;
-
-        h2 {
-            @include heading-font-2;
-            color: var(--dark-blue);
-        }
-    }
-
-    .partnerGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .partnerItem {
-        padding: 40px 30px;
-        position: relative;
-
-        h4 {
-            @include heading-font-5;
-            color: var(--dark-blue);
-            margin: 14px 0 10px;
-        }
-
-        p {
-            @include paragraph-heading-2-regular;
-            color: #5c6066;
-            max-width: 340px;
-        }
-
-        .icon {
-            width: 42px;
-
-            img {
-                width: 100%;
+    .container-fluid {
+        max-width: min(85%, 1920px);
+        .headingArea {
+            margin-bottom: 60px;
+            padding-left: 40px;
+            h2 {
+                @include heading-font-2;
+                color: var(--dark-blue);
             }
         }
 
-        /* =====================
-           VERTICAL DIVIDER
-        ===================== */
-        &:not(:nth-child(3n))::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 20%;
-            height: 60%;
-            width: 1px;
-            background-image: url('../images/icons/verticle-gradient-line.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* =====================
-           HORIZONTAL DIVIDER
-        ===================== */
-        &:nth-child(-n+3)::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 10%;
-            width: 80%;
-            height: 1px;
-            background-image: url('../images/icons/horizontal-gradient-line.png');
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    }
-
-    /* =====================
-       TABLET
-    ===================== */
-
-    @media(max-width:991px){
-
         .partnerGrid {
-            grid-template-columns: repeat(2,1fr);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .partnerItem {
+            padding: 40px;
+            position: relative;
 
-            &::after,
-            &::before {
-                display:none;
+            h4 {
+                @include heading-font-5;
+                color: var(--dark-blue);
+                margin: 14px 0 10px;
+            }
+
+            p {
+                @include paragraph-heading-2-regular;
+                color: #5c6066;
+                // max-width: 340px;
+            }
+
+            .icon {
+                width: 42px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            /* ===================== VERTICAL DIVIDER ===================== */
+            &:not(:nth-child(3n))::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 20%;
+                height: 60%;
+                width: 1px;
+                background-image: url('../images/icons/verticle-gradient-line.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            /* ===================== HORIZONTAL DIVIDER ===================== */
+            &:nth-child(-n+3)::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 10%;
+                width: 80%;
+                height: 1px;
+                background-image: url('../images/icons/horizontal-gradient-line.png');
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
-    }
 
-    /* =====================
-       MOBILE
-    ===================== */
+        /* ===================== TABLET ===================== */
 
-    @media(max-width:576px){
-        .partnerGrid {
-            grid-template-columns: 1fr;
+        @media(max-width:991px){
+
+            .partnerGrid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .partnerItem {
+
+                &::after,
+                &::before {
+                    display:none;
+                }
+            }
+        }
+
+        /* =====================
+        MOBILE
+        ===================== */
+
+        @media(max-width:576px){
+            .partnerGrid {
+                grid-template-columns: 1fr;
+            }
         }
     }
 }
