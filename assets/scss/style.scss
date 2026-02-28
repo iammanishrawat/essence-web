@@ -141,9 +141,11 @@ body {
     text-decoration: none;
     overflow: hidden;
     transition:
-        background 0.3s ease,
-        color 0.3s ease;
+    background 0.3s ease, color 0.3s ease;
     width: max-content;
+    svg{
+        fill: var(--white);
+    }
 
     &:after {
         content: "";
@@ -161,10 +163,12 @@ body {
     &:hover {
         opacity: 1;
         color: var(--black);
-
         &::after {
             transform: translateY(-100%) scaleY(1);
             z-index: -1;
+        }
+        svg{
+            fill: var(--black);
         }
     }
 }
@@ -184,9 +188,10 @@ body {
     border: 1px solid var(--blue);
     text-decoration: none;
     overflow: hidden;
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    svg{
+        fill: var(--blue);
+    }
 
     &:after {
         content: "";
@@ -204,10 +209,12 @@ body {
     &:hover {
         opacity: 1;
         color: var(--white);
-
         &::after {
             transform: translateY(-100%) scaleY(1);
             z-index: -1;
+        }
+        svg{
+            fill: var(--white);
         }
     }
 }
@@ -2054,14 +2061,6 @@ body {
         }
 
         .category-arrow {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--blue);
-            border: none;
-            color: var(--white);
-            @include flex-row;
-            justify-content: center;
         }
 
         .exclusive-access {
@@ -3073,6 +3072,7 @@ body {
         @include blue-button-style;
         margin-top: 10px;
         width: max-content;
+        z-index: 0;
     }
 }
 
@@ -3663,12 +3663,11 @@ body {
 }
 
 .lightCta {
-    padding: 100px 0;
+    padding: 100px 0 0;
     background-repeat: no-repeat;
     background-size: cover;
 
     .lightCtaInner {
-        background-image: url('../images/light-CTA.png');
         background-repeat: no-repeat;
         background-size: cover;
         color: var(--black);
