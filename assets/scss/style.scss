@@ -25,6 +25,7 @@ body {
     --blue: #00379b;
     --white: #ffffff;
     --black: #000000;
+    --border-color: #aaaaaa;
 }
 
 @mixin heading-font-1 {
@@ -496,8 +497,6 @@ body {
         }
     }
 
-
-
     .hero {
         position: relative;
         // height: calc(100vh - 48px);
@@ -622,7 +621,7 @@ body {
         height: 600px;
         display: flex;
         align-items: flex-end;
-        padding-bottom: 50px;
+        padding-bottom: 100px;
         background-repeat: no-repeat;
         background-size: 100%;
 
@@ -632,9 +631,12 @@ body {
             margin: 0 auto;
 
             .subHeaderInnerSection {
+                width: 1207px;
                 h5 {
                     @include heading-font-5;
-                    color: var(--white)
+                    color: var(--white);
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
                 }
 
                 h2 {
@@ -1225,7 +1227,7 @@ body {
                 width: 35%;
 
                 h4 {
-                    @include heading-font-5;
+                    @include heading-font-6-bold;
                     color: var(--dark-blue);
                     margin-bottom: 8px;
                 }
@@ -1253,7 +1255,7 @@ body {
                     right: 20px;
                     @include flex-row;
                     gap: 40px;
-
+                    max-width: 50%;
                     h3 {
                         @include heading-font-3;
                         color: var(--white);
@@ -1302,6 +1304,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                border: 1px solid var(--border-color);
                 height: 550px;
                 // width: 350px;
             }
@@ -1518,7 +1521,7 @@ body {
                     justify-content: space-between;
 
                     h4 {
-                        @include heading-font-6-bold;
+                        @include heading-font-5;
                         color: var(--dark-blue);
                     }
 
@@ -1547,6 +1550,7 @@ body {
                     .track {
                         @include flex-row-bottom;
                         gap: 44px;
+                        height: 500px;
 
                         .slide {
                             flex-shrink: 0;
@@ -1564,8 +1568,8 @@ body {
                             }
 
                             &.hero {
-                                width: 320px;
-                                height: 400px;
+                                width: 400px;
+                                height: 500px;
                             }
                         }
                     }
@@ -1576,14 +1580,16 @@ body {
                 position: absolute;
                 right: 0;
                 top: 0;
-                width: 50%;
+                width: 60%;
 
                 h3 {
                     @include heading-font-3;
+                    margin-bottom: 40px
                 }
 
                 h4 {
                     @include heading-font-4;
+                    margin-bottom: 4px
                 }
 
                 p {
