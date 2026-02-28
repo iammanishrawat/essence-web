@@ -2448,15 +2448,17 @@ body {
             display: flex;
             flex-direction: column;
             gap: 32px;
-            padding-top: 30px;
         }
 
         .trending-title {
             @include heading-font-6-bold;
             color: var(--dark-blue);
+            margin-bottom: 20px;
         }
 
         .category-list {
+            display: flex;
+            flex-direction: column;
             background: var(--white);
             border-radius: 20px;
         }
@@ -2465,8 +2467,13 @@ body {
             @include flex-row;
             justify-content: space-between;
             padding: 16px;
-            border-bottom: 1px dashed rgba(0, 0, 0, .12);
-            transition: .3s;
+            cursor: pointer;
+            transition: .3s ease;
+            border-bottom: 1px dashed rgba(0, 0, 0, .1);
+
+            &:last-child {
+                border-bottom: 0;
+            }
 
             &:hover {
                 background: rgba(0, 0, 0, .03);
@@ -2485,6 +2492,10 @@ body {
             background: rgba(0, 0, 0, .05);
             @include flex-row;
             justify-content: center;
+
+            img {
+                width: 70%;
+            }
         }
 
         .category-details {
@@ -2492,6 +2503,7 @@ body {
             h4 {
                 @include heading-font-6-bold;
                 color: var(--dark-blue);
+                margin-bottom: 2px;
             }
 
             p {
@@ -2501,16 +2513,7 @@ body {
         }
 
         .category-arrow {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--blue);
-            color: var(--white);
-            @include flex-row;
-            justify-content: center;
         }
-
-        /* ======================= SUBSCRIBE CARD ======================= */
 
         .exclusive-access {
             background: var(--white);
@@ -2518,30 +2521,45 @@ body {
             padding: 24px;
         }
 
+        .exclusive-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 24px;
+        }
+
         .exclusive-title {
             @include heading-font-5;
             color: var(--dark-blue);
+            margin-bottom: 12px;
         }
 
         .exclusive-description {
             @include paragraph-heading-2-regular;
             opacity: .85;
+            margin-bottom: 20px;
         }
 
         .subscribe-btn {
             @include blue-button-style;
+            z-index: 0;
         }
 
-        /* ======================= MOBILE ======================= */
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
-            .article-image {
-                height: 200px;
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
 
-            .insights-section {
-                padding: 20px;
+            .article-card {
+                flex-direction: column;
+            }
+
+            .article-image {
+                width: 100%;
+                height: 200px;
             }
         }
     }
