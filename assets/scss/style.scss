@@ -3500,6 +3500,97 @@ body {
     }
 }
 
+.techStackSection {
+    padding: 100px 0;
+
+    .container-fluid {
+        max-width: min(85%, 1920px);
+    }
+
+    /* Heading */
+
+    .headingArea {
+        margin-bottom: 60px;
+
+        h2 {
+            @include heading-font-2;
+            color: var(--dark-blue);
+
+            span {
+                @include purple-gradient-text;
+            }
+        }
+    }
+
+    /* Grid */
+
+    .techGrid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+
+        @media(max-width:1200px){
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        @media(max-width:768px){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @media(max-width:480px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Card */
+
+    .techCard {
+        position: relative;
+        padding-top: 24px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        /* vertical divider */
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     left: 0;
+        //     top: 8px;
+        //     width: 2px;
+        //     height: 60px;
+        //     background: rgba(0,55,155,.25);
+        // }
+
+        .icon {
+            height: 40px;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .line{
+            width: 2px;
+            height: 60px;
+            background: rgba(0, 55, 155, 0.25);
+        }
+
+        h4 {
+            @include heading-font-6-bold;
+            color: var(--dark-blue);
+        }
+
+        p {
+            @include paragraph-heading-2-regular;
+            color: #5c6066;
+            // max-width: 220px;
+        }
+    }
+}
+
 // common css
 
 .topBar {
