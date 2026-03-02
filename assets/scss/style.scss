@@ -2591,12 +2591,17 @@ body {
         .article-title {
             @include heading-font-3;
             color: var(--dark-blue);
+            margin-bottom: 10px
         }
 
         .article-meta {
             @include flex-row;
             gap: 16px;
             @include paragraph-heading-2-regular;
+            span{
+                @include flex-row;
+                gap: 4px
+            }
         }
 
         .article-author{
@@ -2847,6 +2852,10 @@ body {
             border-radius: 16px;
             padding: 16px;
             position: relative;
+            h6{
+                @include heading-font-6-bold;
+                margin-bottom: 10px;
+            }
 
             .inner-flex-area {
                 @include flex-row;
