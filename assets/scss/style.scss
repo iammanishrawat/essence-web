@@ -137,7 +137,7 @@ body {
 }
 
 @mixin white-button-style {
-    font-size: clamp(16px, 1.05vw, 20px);
+    font-size: clamp(18px, 1.25vw, 24px);
     position: relative;
     text-decoration: none;
     opacity: 0.85;
@@ -188,7 +188,7 @@ body {
 }
 
 @mixin blue-button-style {
-    font-size: clamp(16px, 1.05vw, 20px);
+    font-size: clamp(18px, 1.25vw, 24px);
     position: relative;
     text-decoration: none;
     opacity: 0.85;
@@ -486,7 +486,7 @@ body {
                         background: none;
                         border: none;
                         color: white;
-                        font-size: 26px;
+                        // font-size: 26px;
                     }
                 }
             }
@@ -767,7 +767,7 @@ body {
                     }
 
                     h5 {
-                        @include heading-font-5;
+                        @include heading-font-4;
                         color: var(--white);
                         position: absolute;
                         left: 15%;
@@ -998,7 +998,7 @@ body {
     background-position: center;
     background-size: cover;
     position: relative;
-    height: 500px;
+    height: 600px;
     transition: background-image 0.4s ease;
 
     // padding: 100px 0;
@@ -1032,19 +1032,24 @@ body {
 
         .flex-inner {
             border-right: 1px solid #ffffff73;
-            height: 500px;
+            height: 600px;
             color: #fff;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0 20px 20px;
-
+            padding: 0 40px 60px;
+            h4{
+                @include heading-font-4;
+            }
             p {
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(15px);
                 transition: all 0.4s ease;
+                @include paragraph-heading-2-regular;
+                margin-top: 10px;
+                margin-bottom: 30px;
             }
 
             a {
@@ -3024,7 +3029,7 @@ body {
             background: transparent;
             color: var(--blue);
             cursor: pointer;
-            font-size: 20px;
+            // font-size: 20px;
             font-weight: 600;
             color: var(--blue);
             -webkit-appearance: none;
@@ -3647,7 +3652,7 @@ body {
         .arrow {
             background: none;
             border: none;
-            font-size: 22px;
+            // font-size: 22px;
             cursor: pointer;
         }
 
@@ -4012,12 +4017,13 @@ footer {
                     ul {
                         display: flex;
                         flex-direction: column;
-                        gap: 16px;
+                        gap: 0;
                         list-style: none;
                         padding: 0;
                         margin-top: 1.5rem;
 
                         li {
+                            margin-bottom: 15px;
                             h6 {
                                 @include heading-font-6-regular;
                                 @include flex-row;
