@@ -120,16 +120,28 @@ body {
 @mixin flex-row {
     display: flex;
     align-items: center;
+    @media(max-width: 840px){
+        flex-wrap: wrap;
+        gap: 14px;
+    }
 }
 
 @mixin flex-row-top {
     display: flex;
     align-items: flex-start;
+    @media(max-width: 840px){
+        flex-wrap: wrap;
+        gap: 14px;
+    }
 }
 
 @mixin flex-row-bottom {
     display: flex;
     align-items: flex-end;
+    @media(max-width: 840px){
+        flex-wrap: wrap;
+        gap: 14px;
+    }
 }
 
 @mixin anchor-style {
@@ -581,7 +593,7 @@ body {
 
             .hero-nav {
                 position: absolute;
-                bottom: 0;
+                bottom: 40px;
                 left: 0;
                 right: 0;
                 @include flex-row;
@@ -686,7 +698,10 @@ body {
         .center {
             flex: 1 1 55%;
             max-width: 55%;
-
+            @media(max-width: 840px){
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
             h3 {
                 @include heading-font-3;
                 margin-bottom: 80px;
@@ -720,14 +735,18 @@ body {
         @include flex-row;
         margin-top: 100px;
         gap: 50px;
-
+        @media(max-width: 840px){
+            flex-direction: column;
+        }
         .left {
             // max-width: 350px;
             max-width: clamp(280px, 18vw, 350px);
             flex: 1;
-
             // flex: 1 1 30%;
             // max-width: 28%;
+            @media(max-width: 840px){
+                max-width: max-content;
+            }
             h2 {
                 @include heading-font-2;
 
@@ -989,7 +1008,12 @@ body {
             display: flex;
             margin-top: 50px;
             gap: 50px;
-
+            @media(max-width: 991px){
+                gap: 25px;
+            }
+            @media(max-width: 840px){
+                flex-direction: column;
+            }
             .innerCard {
                 flex: 1;
 
@@ -1019,8 +1043,10 @@ body {
     position: relative;
     height: 600px;
     transition: background-image 0.4s ease;
-
     // padding: 100px 0;
+    @media(max-width: 991px){
+        height: auto;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -1048,9 +1074,12 @@ body {
         align-items: center;
         position: relative;
         z-index: 1;
-
+        @media(max-width: 991px){
+            grid-template-columns: repeat(2, 1fr);
+        }
         .flex-inner {
             border-right: 1px solid #ffffff73;
+            border-bottom: 1px solid #ffffff73;
             height: 600px;
             color: #fff;
             cursor: pointer;
@@ -1062,6 +1091,9 @@ body {
             padding-bottom: 60px;
             @media(max-width: 991px){
             padding-left: 10px;    
+            @media(max-width: 991px){
+                padding: 0 40px 60px;
+            }
             }
             h4{
                 @include heading-font-4;
@@ -1154,7 +1186,11 @@ body {
         display: flex;
         gap: 48px;
         margin-top: 60px;
-
+        @media(max-width: 840px){
+            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
         .cards {
             position: relative;
             height: 100%;
@@ -1171,6 +1207,12 @@ body {
                     top: 0;
                     left: 0;
                     color: var(--white);
+                    h5{
+                        @include heading-font-5;
+                    }
+                    p{
+                        @include paragraph-heading-2-regular;
+                    }
                 }
             }
 
@@ -1181,6 +1223,12 @@ body {
                     bottom: 0;
                     left: 0;
                     color: var(--white);
+                    h5{
+                        @include heading-font-5;
+                    }
+                    p{
+                        @include paragraph-heading-2-regular;
+                    }
                 }
             }
         }
@@ -1201,6 +1249,12 @@ body {
                 top: 0;
                 left: 0;
                 color: var(--white);
+                h5{
+                    @include heading-font-5;
+                }
+                p{
+                    @include paragraph-heading-2-regular;
+                }
             }
         }
 
@@ -1215,6 +1269,12 @@ body {
                 top: 0;
                 left: 0;
                 color: var(--white);
+                h5{
+                    @include heading-font-5;
+                }
+                p{
+                    @include paragraph-heading-2-regular;
+                }
             }
         }
     }
@@ -3924,7 +3984,9 @@ body {
         align-items: center;
         padding: 100px;
         border-radius: 24px;
-
+        @media(max-width: 840px){
+            padding: 50px;
+        }
         h2 {
             @include heading-font-2;
         }
@@ -3945,6 +4007,9 @@ body {
 footer {
     background-image: url(../images/footer-bgimage.jpg);
     padding: 40px 0;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 
     .container-fluid {
         width: 100%;
