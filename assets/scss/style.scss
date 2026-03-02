@@ -781,7 +781,10 @@ body {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
                 @media (max-width: 1199px){
-                grid-template-columns: repeat(2, 1fr);    
+                    grid-template-columns: repeat(2, 1fr);    
+                }
+                @media (max-width: 580px){
+                    grid-template-columns: repeat(1, 1fr);    
                 }
                 .cards {
                     position: relative;
@@ -850,7 +853,9 @@ body {
         margin-top: 50px;
         display: flex;
         gap: 30px;
-
+        @media(max-width: 580px){
+            flex-direction: column;
+        }
         .innerCard {
             @include flex-row-top;
             background-color: var(--white);
@@ -1739,6 +1744,26 @@ body {
             }
         }
     }
+
+    // .timelineDots {
+    //     display: flex;
+    //     justify-content: center;
+    //     gap: 10px;
+    //     margin-top: 25px;
+    // }
+
+    // .dot {
+    //     width: 10px;
+    //     height: 10px;
+    //     border-radius: 50%;
+    //     background: #ccc;
+    //     cursor: pointer;
+    // }
+
+    // .dot.active {
+    //     background: #000;
+    //     transform: scale(1.3);
+    // }
 }
 
 .contactFormSection {
