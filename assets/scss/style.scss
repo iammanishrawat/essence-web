@@ -947,7 +947,9 @@ body {
         width: 100%;
         max-width: min(85%, 1920px);
         margin: 0 auto;
-
+        @media(max-width: 991px){
+            max-width: min(95%, 1920px);
+        }
         .headingArea {
             @include flex-row-bottom;
             justify-content: space-between;
