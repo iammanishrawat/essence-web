@@ -1685,7 +1685,11 @@ body {
                         @include flex-row-bottom;
                         gap: 44px;
                         height: 500px;
-
+                        @media(max-width: 840px){
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 20px;
+                        }
                         .slide {
                             flex-shrink: 0;
                             width: 185px;
