@@ -286,7 +286,7 @@
     </section>
 
     <section class="trustedSection">
-        <div class="container">
+        <div class="container-fluid">
 
             <h2>
                 Built on a foundation<br>
@@ -452,13 +452,13 @@
                         <div class="viewport">
                             <div class="track">
 
-                                <div class="slide" data-year="./assets/images/icons/2015.svg"
+                                <div class="slide hero" data-year="./assets/images/icons/2015.svg"
                                     data-title="The Beginning of Essence"
                                     data-desc="From a small team with big ambitions, Essence was born with a vision to deliver innovative digital solutions. What started as a single-location venture quickly grew into a trusted technology partner for startups and enterprises across diverse industries.">
                                     <img src="./assets/images/aboutpage-images/essence.png">
                                 </div>
 
-                                <div class="slide hero" data-year="./assets/images/icons/2017.svg"
+                                <div class="slide" data-year="./assets/images/icons/2017.svg"
                                     data-title="ISO Certification"
                                     data-desc="ISO certification strengthened our quality commitment.">
                                     <img src="./assets/images/aboutpage-images/iso.png">
@@ -708,12 +708,12 @@
             const firstRects = getRects();
 
             // rotate until clicked slide becomes center (index 1)
-            while (track.children[1] !== slide) {
+            while (track.children[0] !== slide) {
                 track.appendChild(track.firstElementChild);
             }
 
             [...track.children].forEach(el => el.classList.remove('hero'));
-            track.children[1].classList.add('hero');
+            track.children[0].classList.add('hero');
 
             const lastRects = getRects();
 

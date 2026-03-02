@@ -659,7 +659,10 @@ body {
             margin: 0 auto;
 
             .subHeaderInnerSection {
-                width: 1207px;
+                max-width: 1207px;
+                @media(max-width: 991px){
+                    width: auto;
+                }
 
                 h5 {
                     @include heading-font-5;
@@ -1295,7 +1298,9 @@ body {
         grid-template-columns: 1.5fr 1fr 1fr;
         gap: 60px;
         margin-bottom: 60px;
-
+        @media(max-width: 840px){
+            grid-template-columns: repeat(1, 1fr);
+        }
         .introLeft {
             h2 {
                 @include heading-font-2;
@@ -1331,7 +1336,9 @@ body {
 
             .featureText {
                 width: 35%;
-
+                 @media(max-width: 840px){
+                    width: 100%;
+                }
                 h4 {
                     @include heading-font-6-bold;
                     color: var(--dark-blue);
@@ -1349,7 +1356,9 @@ body {
             .featureImage {
                 position: relative;
                 width: 65%;
-
+                @media(max-width: 840px){
+                    width: 100%;
+                }
                 img {
                     width: 100%;
                     border-radius: 20px;
@@ -1397,6 +1406,12 @@ body {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 56px;
+            @media(max-width: 1240px){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media(max-width: 840px){
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
 
         .countryCard {
@@ -1445,7 +1460,9 @@ body {
             .flag {
                 display: flex;
                 width: 200px;
-
+                @media(max-width: 840px){
+                    width: 150px;
+                }
                 img {
                     width: 100%;
                 }
@@ -1503,9 +1520,8 @@ body {
     padding: 100px 0;
     background: #f5f6f8;
 
-    .container {
-        max-width: 90%;
-        max-width: 1240px;
+    .container-fluid {
+        max-width: min(85%, 1920px);
         margin: 0 auto;
         text-align: center;
     }
@@ -1524,6 +1540,9 @@ body {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 24px;
+        @media(max-width: 840px){
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     .logoCard {
@@ -1569,7 +1588,9 @@ body {
         grid-template-columns: 1fr 2fr;
         gap: 60px;
         align-items: start;
-
+        @media(max-width: 991px){
+            grid-template-columns: repeat(1, 1fr);
+        }
         .assistLeft {
             h2 {
                 @include heading-font-2;
@@ -1585,7 +1606,9 @@ body {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
-
+            @media(max-width: 991px){
+                grid-template-columns: repeat(1, 1fr);
+            }
             .assistCard {
                 background: var(--white);
                 padding: 24px;
@@ -1649,7 +1672,11 @@ body {
 
         .timelineRow {
             position: relative;
-
+            @media(max-width: 991px){
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 48px;
+            }
             .timelineSlider {
                 .viewport {
                     overflow: hidden;
@@ -1689,7 +1716,9 @@ body {
                 top: 0;
                 /* width: 100%; */
                 left: 700px;
-
+                @media(max-width: 991px){
+                    position: static;
+                }
                 h3 {
                     @include heading-font-3;
                     margin-bottom: 40px
