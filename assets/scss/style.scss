@@ -2959,6 +2959,9 @@ body {
             h2 {
                 @include heading-font-2;
                 color: var(--dark-blue);
+                span{
+                    @include gradient-text;
+                }
             }
         }
 
@@ -3144,7 +3147,7 @@ body {
             color: var(--dark-blue);
 
             span {
-                @include purple-gradient-text;
+                @include gradient-text;
             }
         }
 
@@ -3254,7 +3257,6 @@ body {
         display: grid;
         grid-template-columns: 1fr 1.2fr;
         gap: 60px;
-        align-items: center;
 
         @media(max-width:991px) {
             grid-template-columns: 1fr;
@@ -3270,14 +3272,14 @@ body {
             color: var(--dark-blue);
 
             span {
-                @include purple-gradient-text;
+                @include gradient-text;
             }
         }
 
         p {
             @include paragraph-heading-2-regular;
             margin-top: 16px;
-            max-width: 420px;
+            // max-width: 420px;
         }
     }
 
@@ -3750,7 +3752,7 @@ body {
             margin-bottom: 40px;
 
             span {
-                @include purple-gradient-text;
+                @include gradient-text;
             }
         }
 
@@ -3888,7 +3890,7 @@ body {
             color: var(--dark-blue);
 
             span {
-                @include purple-gradient-text;
+                @include gradient-text;
             }
         }
     }
