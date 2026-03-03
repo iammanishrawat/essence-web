@@ -3978,6 +3978,125 @@ body {
     }
 }
 
+.caseStudySection {
+    padding: 100px 0 0;
+    background: var(--bg-blue);
+    position: relative;
+
+    .container-fluid {
+        max-width: min(85%, 1920px);
+    }
+
+    .caseWrapper {
+        position: relative;
+        margin-top: -280px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.foundationSection {
+    padding: 100px 0;
+    background: #f5f7fa;
+
+    .container-fluid {
+        max-width: min(85%, 1920px);
+    }
+
+    /* HEADER */
+
+    .foundationHeader {
+        text-align: center;
+        margin-bottom: 60px;
+
+        h2 {
+            @include heading-font-2;
+            color: var(--dark-blue);
+
+            span {
+                @include gradient-text;
+            }
+        }
+    }
+
+    /* GRID */
+
+    .foundationGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+
+        @media(max-width: 991px){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @media(max-width: 576px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* CARD */
+
+    .foundationCard {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: .3s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,.08);
+        }
+
+        .cardImage {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .badge {
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                background: var(--white);
+                padding: 6px 14px;
+                border-radius: 6px;
+                @include paragraph-heading-2-bold;
+                box-shadow: 0 5px 15px var(--border-color);
+                color: var(--dark-blue);
+            }
+        }
+
+        .cardContent {
+            padding: 20px;
+
+            h4 {
+                @include heading-font-6-bold;
+                color: var(--dark-blue);
+                margin-bottom: 12px;
+            }
+
+            .meta {
+                display: flex;
+                gap: 16px;
+
+                span {
+                    @include paragraph-heading-2-regular;
+                    @include flex-row;
+                    gap: 4px;
+                }
+            }
+        }
+    }
+}
+
 // common css
 
 .topBar {
@@ -4029,7 +4148,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 100px;
+        padding: 50px;
         border-radius: 24px;
 
         h2 {
@@ -4061,7 +4180,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 100px;
+        padding: 50px;
         border-radius: 24px;
         @media(max-width: 840px){
             padding: 50px;
