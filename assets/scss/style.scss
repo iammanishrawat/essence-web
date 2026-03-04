@@ -4184,7 +4184,7 @@ body {
     .topRow {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 80px;
+        gap: 250px;
 
         @media(max-width:991px) {
             grid-template-columns: 1fr;
@@ -4202,9 +4202,8 @@ body {
 
         p {
             @include paragraph-heading-2-regular;
-            color: #5c6066;
             margin-bottom: 16px;
-            max-width: 600px;
+            // max-width: 600px;
         }
     }
 
@@ -4216,9 +4215,8 @@ body {
         .infoItem {
 
             .label {
-                @include paragraph-heading-2-regular;
+                @include paragraph-heading-2-bold;
                 font-weight: 600;
-                color: #9a9a9a;
                 text-transform: uppercase;
                 font-size: 12px;
             }
@@ -4231,7 +4229,7 @@ body {
 
             a {
                 @include paragraph-heading-2-regular;
-                color: var(--blue);
+                color: var(--dark-blue);
                 text-decoration: none;
             }
         }
@@ -4242,6 +4240,8 @@ body {
     background: var(--bg-blue);
     .container-fluid {
         max-width: min(100%, 1920px);
+        margin-left: 0;
+        padding-left: 0;
     }
     .bottomRow {
         display: grid;
@@ -4286,7 +4286,7 @@ body {
                 width: 60px;
                 height: 60px;
                 border-radius: 12px;
-                background: var(--purple-gradient);
+                background: var(--dark-blue-gradient);
             }
         }
     }
@@ -4298,6 +4298,8 @@ body {
 
     .container-fluid {
         max-width: min(100%, 1920px);
+        margin-right: 0;
+        padding-right: 0;
     }
 
     .solutionWrapper {
@@ -4342,11 +4344,14 @@ body {
             padding-left: 28px;
 
             &::before {
-                content: "✔";
+                content: "";
+                background-image: url('../images/icons/double-tick.svg');
                 position: absolute;
                 left: 0;
                 top: 4px;
                 font-size: 14px;
+                width: 20px;
+                height: 20px
             }
 
             h6 {
@@ -4379,7 +4384,7 @@ body {
 
 .statsHighlightSection {
     padding: 100px 0;
-    background: #f5f7fa;
+    background: var(--bg-blue);
 
     .container-fluid {
         max-width: min(85%, 1920px);
