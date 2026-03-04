@@ -4453,6 +4453,97 @@ body {
     }
 }
 
+.projectShowcaseSection {
+    padding: 100px 0 0;
+
+    .container-fluid {
+        max-width: min(100%, 1920px);
+        padding-right: 0;
+        padding-left: 0;    
+    }
+
+    .projectRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 100px;
+
+        .projectContent{
+            &:nth-child(1), &:nth-child(3){
+                padding-left: 120px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    .projectContent {
+
+        h3 {
+            @include heading-font-3;
+            color: var(--dark-blue);
+            margin-bottom: 6px;
+        }
+
+        .projectTag {
+            display: block;
+            @include paragraph-heading-1;
+            color: var(--border-color);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        p {
+            @include paragraph-heading-2-regular;
+            margin-bottom: 20px;
+            max-width: 550px;
+        }
+
+        .features {
+
+            h6 {
+                @include paragraph-heading-2-bold;
+                margin-bottom: 8px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    position: relative;
+                    padding-left: 30px;
+                    margin-bottom: 6px;
+                    @include paragraph-heading-2-regular;
+                    margin-bottom: 6px;
+                    &:before {
+                        content: "";
+                        background-image: url('../images/icons/double-tick.svg');
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .projectImage {
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+}
+
 // common css
 
 .topBar {
